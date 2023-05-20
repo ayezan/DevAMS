@@ -67,21 +67,32 @@ const AuthInit: FC<WithChildren> = ({children}) => {
   // We should request user by authToken (IN OUR EXAMPLE IT'S API_TOKEN) before rendering the application
   useEffect(() => {
     const requestUser = async (apiToken: string) => {
-      try {
-        if (!didRequest.current) {
-          const {data} = await getUserByToken(apiToken)
-          if (data) {
-            setCurrentUser(data)
-          }
-        }
-      } catch (error) {
-        console.error(error)
-        if (!didRequest.current) {
-          logout()
-        }
-      } finally {
-        setShowSplashScreen(false)
+      // try {
+      //   if (!didRequest.current) {
+      //     const {data} = await getUserByToken(apiToken)
+      //     if (data) {
+      //       setCurrentUser(data)
+      //     }
+      //   }
+      // } catch (error) {
+      //   console.error(error)
+      //   if (!didRequest.current) {
+      //     logout()
+      //   }
+      // } finally {
+      //   setShowSplashScreen(false)
+      // }
+
+      const data = {
+        id: 1,
+        username: 'SyedSaadLuqman',
+        password: 'abcd',
+        email: 'gosaad@outlook.com',
+        first_name: 'Saad',
+        last_name: 'Luqman',
       }
+      setCurrentUser(data)
+      setShowSplashScreen(false)
 
       return () => (didRequest.current = true)
     }

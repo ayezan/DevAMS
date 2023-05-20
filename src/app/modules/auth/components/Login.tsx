@@ -41,9 +41,29 @@ export function Login() {
     onSubmit: async (values, {setStatus, setSubmitting}) => {
       setLoading(true)
       try {
-        const {data: auth} = await login(values.email, values.password)
+        //const {data: auth} = await login(values.email, values.password)
+        const auth = {
+          //api_token: 'token-123',
+          //refreshToken: 'refresh-token-123',
+          api_token: '$token12345',
+          created_at: '2023-03-02T12:40:30.000000Z',
+          email: 'goSaad@outlook.com',
+          email_verified_at: '2023-03-02T12:40:30.000000Z',
+          first_name: 'Saad',
+          id: 2,
+          last_name: 'Luqman',
+          updated_at: '2023-03-02T12:40:30.000000Z',
+        }
         saveAuth(auth)
-        const {data: user} = await getUserByToken(auth.api_token)
+        //const {data: user} = await getUserByToken(auth.api_token)
+        const user = {
+          id: 1,
+          username: 'saad',
+          password: 'abcd',
+          email: 'gosaad@outlook.com',
+          first_name: 'saad',
+          last_name: 'Luqman',
+        }
         setCurrentUser(user)
       } catch (error) {
         console.error(error)
