@@ -30,12 +30,12 @@ const SidebarMenuMain = () => {
       </div>
       <SidebarMenuItemWithSub
         title='Account'
-        to='/account'
+        to='/alumni/account'
         fontIcon='bi-person'
         icon='profile-circle'
       >
-        <SidebarMenuItem title='Overview' to='/account/overview' icon='archive' />
-        <SidebarMenuItem title='Settings' to='/account/settings' icon='setting-2' />
+        <SidebarMenuItem title='Overview' to='/alumni/account/overview' icon='archive' />
+        <SidebarMenuItem title='Settings' to='/alumni/account/settings' icon='setting-2' />
       </SidebarMenuItemWithSub>
 
       <div className='menu-item'>

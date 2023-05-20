@@ -11,12 +11,12 @@ export function MenuInner() {
 
       <MenuInnerWithSub
         title='Account'
-        to='/account'
+        to='/alumni/account'
         menuPlacement='bottom-start'
         menuTrigger='click'
       >
-        <MenuItem title='Overview' to='/account/overview' fontIcon='bi-archive' />
-        <MenuItem title='Settings' to='/account/settings' fontIcon='bi-gear' />
+        <MenuItem title='Overview' to='/alumni/account/overview' fontIcon='bi-archive' />
+        <MenuItem title='Settings' to='/alumni/account/settings' fontIcon='bi-gear' />
       </MenuInnerWithSub>
 
       <MenuItem title='Layout Builder' to='/builder' />

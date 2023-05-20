@@ -72,9 +72,9 @@ export interface IDeactivateAccount {
 
 export const profileDetailsInitValues: IProfileDetails = {
   avatar: '/media/avatars/300-1.jpg',
-  fName: 'Max',
-  lName: 'Smith',
-  company: 'Keenthemes',
+  fName: 'Syed',
+  lName: 'Saad',
+  company: 'DHA Suffa University',
   contactPhone: '044 3276 454 935',
   companySite: 'keenthemes.com',
   country: '',

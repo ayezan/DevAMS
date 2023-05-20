@@ -151,9 +151,9 @@ const AccountHeader: React.FC = () => {
               <Link
                 className={
                   `nav-link text-active-primary me-6 ` +
-                  (location.pathname === '/account/overview' && 'active')
+                  (location.pathname === '/alumni/account/overview' && 'active')
                 }
-                to='/account/overview'
+                to='/alumni/account/overview'
               >
                 Overview
               </Link>
@@ -162,9 +162,9 @@ const AccountHeader: React.FC = () => {
               <Link
                 className={
                   `nav-link text-active-primary me-6 ` +
-                  (location.pathname === '/account/settings' && 'active')
+                  (location.pathname === '/alumni/account/settings' && 'active')
                 }
-                to='/account/settings'
+                to='/alumni/account/settings'
               >
                 Settings
               </Link>

@@ -20,7 +20,7 @@ const accountBreadCrumbs: Array<PageLink> = [
   },
 ]
 
-const AccountPage: React.FC = () => {
+const AlumniAccountPage: React.FC = () => {
   return (
     <Routes>
       <Route
@@ -55,4 +55,4 @@ const AccountPage: React.FC = () => {
   )
 }
 
-export default AccountPage
+export default AlumniAccountPage

@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React from 'react'
+import React, {useEffect} from 'react'
 import {Link} from 'react-router-dom'
 import {KTIcon} from '../../../../../_metronic/helpers'
 import {
@@ -8,8 +8,12 @@ import {
   TablesWidget1,
   TablesWidget5,
 } from '../../../../../_metronic/partials/widgets'
+import {IProfileDetails} from './settings/SettingsModel'
+import {profileDetailsInitValues} from './settings/SettingsModel'
 
 export function Overview() {
+  const user = profileDetailsInitValues
+
   return (
     <>
       <div className='card mb-5 mb-xl-10' id='kt_profile_details_view'>
@@ -28,7 +32,7 @@ export function Overview() {
             <label className='col-lg-4 fw-bold text-muted'>Full Name</label>
 
             <div className='col-lg-8'>
-              <span className='fw-bolder fs-6 text-dark'>Max Smith</span>
+              <span className='fw-bolder fs-6 text-dark'>{user.fName + ' ' + user.lName}</span>
             </div>
           </div>
 
@@ -36,7 +40,7 @@ export function Overview() {
             <label className='col-lg-4 fw-bold text-muted'>Company</label>
 
             <div className='col-lg-8 fv-row'>
-              <span className='fw-bold fs-6'>Keenthemes</span>
+              <span className='fw-bold fs-6'>{user.company}</span>
             </div>
           </div>
 
@@ -51,7 +55,7 @@ export function Overview() {
             </label>
 
             <div className='col-lg-8 d-flex align-items-center'>
-              <span className='fw-bolder fs-6 me-2'>044 3276 454 935</span>
+              <span className='fw-bolder fs-6 me-2'>{user.contactPhone}</span>
 
               <span className='badge badge-success'>Verified</span>
             </div>

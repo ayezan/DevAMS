@@ -18,7 +18,7 @@ const PrivateRoutes = () => {
   const ChatPage = lazy(() => import('../modules/apps/chat/ChatPage'))
   const UsersPage = lazy(() => import('../modules/apps/user-management/UsersPage'))
   // Alumni Routes
-  const AlumniAccountPage = lazy(() => import('../pages/alumni/accounts/AccountPage'))
+  const AlumniAccountPage = lazy(() => import('../pages/alumni/account/AccountPage'))
 
   return (
     <Routes>
@@ -26,16 +26,16 @@ const PrivateRoutes = () => {
         {/* Redirect to Dashboard after success login/registartion */}
         <Route path='auth/*' element={<Navigate to='/dashboard' />} />
         {/* Pages */}
-        <Route path='test-page' element={<TestPage />} />
         <Route path='dashboard' element={<DashboardWrapper />} />
         <Route path='builder' element={<BuilderPageWrapper />} />
+        <Route path='menu-test' element={<MenuTestPage />} />
 
         {/* Starting all Alumni Routes */}
-        <Route path='menu-test' element={<MenuTestPage />} />
+        <Route path='test-page' element={<TestPage />} />
         {/* Lazy Modules */}
 
         <Route
-          path='account/*'
+          path='/alumni/account/*'
           element={
             <SuspensedView>
               <AlumniAccountPage />
