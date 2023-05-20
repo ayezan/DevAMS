@@ -1,8 +1,8 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react'
-import {KTIcon, toAbsoluteUrl} from '../../../_metronic/helpers'
+import {KTIcon, toAbsoluteUrl} from '../../../../_metronic/helpers'
 import {Link} from 'react-router-dom'
-import {Dropdown1} from '../../../_metronic/partials'
+import {Dropdown1} from '../../../../_metronic/partials'
 import {useLocation} from 'react-router'
 
 const AccountHeader: React.FC = () => {
@@ -151,9 +151,9 @@ const AccountHeader: React.FC = () => {
               <Link
                 className={
                   `nav-link text-active-primary me-6 ` +
-                  (location.pathname === '/crafted/account/overview' && 'active')
+                  (location.pathname === '/account/overview' && 'active')
                 }
-                to='/crafted/account/overview'
+                to='/account/overview'
               >
                 Overview
               </Link>
@@ -162,9 +162,9 @@ const AccountHeader: React.FC = () => {
               <Link
                 className={
                   `nav-link text-active-primary me-6 ` +
-                  (location.pathname === '/crafted/account/settings' && 'active')
+                  (location.pathname === '/account/settings' && 'active')
                 }
-                to='/crafted/account/settings'
+                to='/account/settings'
               >
                 Settings
               </Link>

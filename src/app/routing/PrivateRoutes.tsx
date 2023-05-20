@@ -29,11 +29,21 @@ const PrivateRoutes = () => {
         <Route path='test-page' element={<TestPage />} />
         <Route path='dashboard' element={<DashboardWrapper />} />
         <Route path='builder' element={<BuilderPageWrapper />} />
-        {/* My Routes */}
-        <Route path='menu-test' element={<MenuTestPage />} />
-        {/* Alumni Routes */}
 
+        {/* Starting all Alumni Routes */}
+        <Route path='menu-test' element={<MenuTestPage />} />
         {/* Lazy Modules */}
+
+        <Route
+          path='account/*'
+          element={
+            <SuspensedView>
+              <AlumniAccountPage />
+            </SuspensedView>
+          }
+        />
+        {/*Ending Alumni Routes */}
+
         <Route
           path='crafted/pages/profile/*'
           element={

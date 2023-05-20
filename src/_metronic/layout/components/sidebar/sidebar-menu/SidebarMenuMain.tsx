@@ -25,6 +25,21 @@ const SidebarMenuMain = () => {
       />
       <div className='menu-item'>
         <div className='menu-content pt-8 pb-2'>
+          <span className='menu-section text-muted text-uppercase fs-8 ls-1'>My Profile</span>
+        </div>
+      </div>
+      <SidebarMenuItemWithSub
+        title='Account'
+        to='/account'
+        fontIcon='bi-person'
+        icon='profile-circle'
+      >
+        <SidebarMenuItem title='Overview' to='/account/overview' icon='archive' />
+        <SidebarMenuItem title='Settings' to='/account/settings' icon='setting-2' />
+      </SidebarMenuItemWithSub>
+
+      <div className='menu-item'>
+        <div className='menu-content pt-8 pb-2'>
           <span className='menu-section text-muted text-uppercase fs-8 ls-1'>Crafted</span>
         </div>
       </div>
