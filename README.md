@@ -1,8 +1,8 @@
-##Install Dependencies:
--npm install --legacy-peer-deps
+## Install Dependencies:
+- npm install --legacy-peer-deps
 
-##Run dev server:
--npm start
+## Run dev server:
+- npm start
 
 ##Open the link:
--http://localhost:3011
+- http://localhost:3011
