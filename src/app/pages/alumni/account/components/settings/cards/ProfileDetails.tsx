@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {ChangeEvent, useRef, useState} from 'react'
 import {toAbsoluteUrl} from '../../../../../../../_metronic/helpers'
 import {IProfileDetails, profileDetailsInitValues as initialValues} from '../SettingsModel'
 import * as Yup from 'yup'
@@ -24,6 +24,8 @@ const ProfileDetails: React.FC = () => {
   }
 
   const [loading, setLoading] = useState(false)
+  const [selectedImage, setSelectedImage] = useState<File | null>(null)
+  const iref = useRef<HTMLInputElement>(null)
   const formik = useFormik<IProfileDetails>({
     initialValues,
     validationSchema: profileDetailsSchema,
@@ -68,10 +70,31 @@ const ProfileDetails: React.FC = () => {
                 >
                   <div
                     className='image-input-wrapper w-125px h-125px'
-                    style={{backgroundImage: `url(${toAbsoluteUrl(data.avatar)})`}}
+                    style={{
+                      backgroundImage: `url(${
+                        !selectedImage
+                          ? toAbsoluteUrl(data.avatar)
+                          : URL.createObjectURL(selectedImage)
+                      })`,
+                    }}
+                    onClick={() => {
+                      iref.current?.click()
+                    }}
                   ></div>
                 </div>
               </div>
+              <input
+                type='file'
+                name='myImage'
+                ref={iref}
+                onChange={(event) => {
+                  if (event.target.files) {
+                    console.log(event.target.files[0])
+                    setSelectedImage(event.target.files[0])
+                  }
+                }}
+                hidden={true}
+              />
             </div>
 
             <div className='row mb-6'>
